@@ -5,11 +5,13 @@
   padding: var(--space-4);
   margin: var(--space-4) 0;
   border-radius: var(--border-radius-medium);
+  color: white;
 }
 
 .cart-item h2 {
   font-size: 1rem;
   margin: 0;
+  color: white;
 }
 
 .cart-item input {
@@ -23,7 +25,7 @@
 
 .cart-product-price {
   font-style: italic;
-  color: var(--color-gray-300);
+  color: var(--color-primary-100);
 }
 
 #cart-total {
@@ -36,7 +38,7 @@
 #cart-total p {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--color-primary-400)
+  color: black;
 }
 
 #cart-total #cart-total-fallback {

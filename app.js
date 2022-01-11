@@ -13,6 +13,7 @@ const protectRoutesMiddleware = require('./middlewares/protect-routes');
 const cartMiddleware = require('./middlewares/cart');
 const updateCartPricesMiddleware = require('./middlewares/update-cart-prices');
 const notFoundMiddleware = require('./middlewares/not-found');
+const userDisplayMiddleware = require('./middlewares/user-display');
 const authRoutes = require('./routes/auth.routes');
 const productsRoutes = require('./routes/products.routes');
 const baseRoutes = require('./routes/base.routes');
@@ -40,6 +41,7 @@ app.use(updateCartPricesMiddleware);
 
 app.use(addCsrfTokenMiddleware);
 app.use(checkAuthStatusMiddleware);
+app.use(userDisplayMiddleware);
 
 app.use(baseRoutes);
 app.use(authRoutes);

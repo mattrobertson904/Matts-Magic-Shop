@@ -4,15 +4,19 @@
 </head>
 <body>
   <%- include('../../shared/includes/header') %>
-  <main>
-    <h1>Product Administration</h1>
+  <main id="admin-main">
+      <h1>Product Administration</h1>
     <section>
-      <h2>Manage Products</h2>
+        <h2>Manage Products</h2>
+      <br>
+      </section>
+      <section>
       <p>
         <a href="/admin/products/new" class="btn">Add Product</a>
       </p>
     </section>
-    <section>
+    <br>
+    <section id="all-products-box">
       <ul id="products-grid">
         <% for (const product of products) { %>
           <li>

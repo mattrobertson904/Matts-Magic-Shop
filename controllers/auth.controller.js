@@ -144,6 +144,8 @@ async function login(req, res, next) {
     return;
   }
 
+  console.log(existingUser);
+
   authUtil.createUserSession(req, existingUser, function () {
     res.redirect('/');
   });

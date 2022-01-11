@@ -3,15 +3,15 @@
 }
 
 html {
-  font-family: "Yusei magic", "sans-serif";
+  font-family: 'PT Sans Narrow', sans-serif;
 
-  --color-gray-50: rgb(243, 236, 230);
-  --color-gray-100: rgb(207, 201, 195);
-  --color-gray-300: rgb(99, 92, 86);
-  --color-gray-400: rgb(70, 65, 60);
-  --color-gray-500: rgb(37, 34, 31);
-  --color-gray-600: rgb(32, 29, 26);
-  --color-gray-700: rgb(31, 26, 22);
+  --color-gray-50: rgb(243, 236, 230, 0.50);
+  --color-gray-100: rgb(207, 201, 195, 0.50);
+  --color-gray-300: rgb(99, 92, 86, 0.5);
+  --color-gray-400: rgb(70, 65, 60, 0.5);
+  --color-gray-500: rgb(37, 34, 31, 0.5);
+  --color-gray-600: rgb(32, 29, 26, 0.5);
+  --color-gray-700: rgb(31, 26, 22, 0.5);
 
   --color-primary-50: rgb(200, 208, 253);
   --color-primary-100: rgb(183, 202, 253);
@@ -25,7 +25,7 @@ html {
   --color-error-100: rgb(255, 192, 180);
   --color-error-500: rgb(199, 51, 15);
 
-  --color-primary-500-bg: rgb(63, 60, 58);
+  --color-primary-500-bg: rgb(63, 60, 58, 0.75);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -40,14 +40,18 @@ html {
 }
 
 body {
-  background-color: var(--color-gray-500);
-  color: var(--color-gray-100);
-  margin: 0;
+  /* background-color: var(--color-gray-500); */
+  /* background-color: rgb(168, 168, 168); */
+  /* color: var(--color-gray-100); */
+  /* color: var(--color-primary-500); */
+  background: url("../assets/MTG\ background\ 1.png");
+  color: black;
+  margin-top: 6rem;
 }
 
 main {
   width: 90%;
-  max-width: 50rem;
+  max-width: 90rem;
   margin: 0 auto;
 }
 
@@ -59,7 +63,8 @@ ul, ol {
 
 a {
   text-decoration: none;
-  color: var(--color-primary-400);
+  /* color: var(--color-primary-400); */
+  color: rgb(235, 235, 235);
 }
 
 .btn {
@@ -68,7 +73,7 @@ a {
   padding: var(--space-2) var(--space-6);
   background-color: var(--color-primary-400);
   color: var(--color-primary-500-contrast);
-  border: 1px solid var(--color-gray-100);
+  border: 1px solid var(--color-primary-500);
   border-radius: var(--border-radius-small);
 }
 
