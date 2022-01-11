@@ -7,15 +7,17 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 60rem;
-  height: 5rem;
+  /* max-width: 90rem; */
+  height: 4rem;
   margin: 0 auto;
   padding: 0 var(--space-6);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--color-primary-500);
-  background: var(--color-gray-500);
+  /* background-color: rgba(70, 65, 60, .75); */
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: transparent;
 }
 
 #logo a {
@@ -23,8 +25,26 @@ main {
   font-size: 1.45rem;
 }
 
+#logo img {
+  /* margin-top: .75rem; */
+  display: inline;
+  height: 3rem;
+  width: 3rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 #main-header nav{
   display: none;
+}
+
+#nav-greeting {
+  color: white;
+  margin-right: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-items {
@@ -51,6 +71,11 @@ main {
 
 #logout-btn {
   background-color: transparent;
+}
+
+#logout-btn:hover {
+  cursor: pointer;
+  background-color: var(--color-gray-400);
 }
 
 #mobile-menu-btn {
@@ -106,7 +131,7 @@ main {
   }
 
   #main-header {
-    position: static;
+    position: fixed;
   }
 
   #main-header nav{

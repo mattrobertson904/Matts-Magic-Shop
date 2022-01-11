@@ -1,4 +1,12 @@
 <ul class="nav-items">
+  <% if (locals.isAdmin || locals.uid) { %>
+  <li id="nav-greeting">Welcome!   
+    <%= locals.user.name %>, 
+    <br>
+    <%= locals.user.email %>
+  </li>
+  <% } %>
+
   <% if (!locals.isAdmin) { %>
   <li><a href="/">Shop</a></li>
   <li><a href="/cart">Cart <span class="badge"><%= locals.cart.totalQuantity %></span></a></li>
