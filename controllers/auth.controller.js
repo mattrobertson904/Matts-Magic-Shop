@@ -5,16 +5,18 @@ const sessionFlash = require('../util/session-flash');
 
 function getSignup(req, res) {
   let sessionData = sessionFlash.getSessionData(req);
-
+  
   if (!sessionData) {
     sessionData = {
       email: '',
       confirmEmail: '',
       password: '',
-      fullname: '',
+      firstname: '',
+      lastname: '',
       street: '',
-      postal: '',
       city: '',
+      state: '',
+      postal: '',
     };
   }
 
@@ -28,20 +30,24 @@ async function signup(req, res, next) {
     email: req.body.email,
     confirmEmail: req.body['confirm-email'],
     password: req.body.password,
-    fullname: req.body.fullname,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     street: req.body.street,
+    city: req.body.city,
+    state: req.body.state,
     postal: req.body.postal,
-    city: req.body.city
   };
 
   if (
     !validation.userDetailsAreValid(
       req.body.email,
       req.body.password,
-      req.body.fullname,
+      req.body.firstName,
+      req.body.lastName,
       req.body.street,
+      req.body.city,
+      req.body.state,
       req.body.postal,
-      req.body.city
     ) ||
     !validation.emailIsConfirmed(req.body.email, req.body['confirm-email'])
   ) {
@@ -62,18 +68,19 @@ async function signup(req, res, next) {
   const user = new User(
     req.body.email,
     req.body.password,
-    req.body.fullname,
+    req.body.firstName,
+    req.body.lastName,
     req.body.street,
+    req.body.city,
+    req.body.state,
     req.body.postal,
-    req.body.city
   );
 
   try {
     const existsAlready = await user.existsAlready();
 
     if (existsAlready) {
-      sessionFlash.flashDataToSession(
-        req,
+      sessionFlash.flashDataToSession(req,
         {
           errorMessage: 'User exists already! Try logging in instead!',
           ...enteredData,
@@ -144,7 +151,7 @@ async function login(req, res, next) {
     return;
   }
 
-  console.log(existingUser);
+  // console.log(existingUser);
 
   authUtil.createUserSession(req, existingUser, function () {
     res.redirect('/');
@@ -153,7 +160,19 @@ async function login(req, res, next) {
 
 function logout(req, res) {
   authUtil.destroyUserAuthSession(req);
+  
   res.redirect('/login');
+}
+
+async function getAccount(req, res, next){
+  try {
+    const user = await User.findById(req.session.uid);
+    res.render('customer/auth/account-details', {
+      accountData: user
+    });
+  } catch (error) {
+    next(error);
+  }
 }
 
 module.exports = {
@@ -162,4 +181,5 @@ module.exports = {
   signup: signup,
   login: login,
   logout: logout,
+  getAccount: getAccount,
 };

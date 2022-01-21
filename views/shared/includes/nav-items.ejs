@@ -1,9 +1,8 @@
 <ul class="nav-items">
   <% if (locals.isAdmin || locals.uid) { %>
-  <li id="nav-greeting">Welcome!   
-    <%= locals.user.name %>, 
-    <br>
-    <%= locals.user.email %>
+  <li id="nav-greeting">Welcome!  
+    <a id="nav-email" href="/account"> 
+      <%= locals.user.email %></a>
   </li>
   <% } %>
 

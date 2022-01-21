@@ -1,0 +1,27 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Account Details' }) %>
+<link rel="stylesheet" href="/styles/account.css">
+</head>
+
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main id="account-details">
+    <header>
+      <form>
+        <h2>Full Name:</h2>
+        <%= accountData.firstName %> <%= accountData.lastName %>
+        <div>
+          <h2>E-Mail Address:</h2>
+          <%= accountData.email %>
+        </div>
+        <div>
+          <h2>Shipping Address:</h2>
+          <%= accountData.address.street %> <br>
+          <%= accountData.address.city %>,
+          <%= accountData.address.state %> <br>
+          <%= accountData.address.postalCode %>
+        </div>
+        <button class="btn btn-alt-2">Change</button>
+      </form>
+    </header>
+  </main>
+</body>

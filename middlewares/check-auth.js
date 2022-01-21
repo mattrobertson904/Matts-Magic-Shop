@@ -6,7 +6,6 @@ async function checkAuthStatus(req, res, next) {
     return next();
   }
 
-  
   res.locals.uid = uid;
   res.locals.isAuth = true;
   res.locals.isAdmin = req.session.isAdmin;

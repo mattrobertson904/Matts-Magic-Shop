@@ -4,14 +4,16 @@ const mongodb = require('mongodb');
 const db = require('../data/database');
 
 class User {
-  constructor(email, password, fullname, street, postal, city) {
+  constructor(email, password, firstName, lastName, street, city, state, postal) {
     this.email = email;
     this.password = password;
-    this.name = fullname;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.address = {
       street: street,
+      city: city,
+      state: state,
       postalCode: postal,
-      city: city
     };
   }
 
@@ -47,7 +49,8 @@ class User {
     await db.getDb().collection('users').insertOne({
       email: this.email,
       password: hashedPassword,
-      name: this.name,
+      firstName: this.firstName,
+      lastName: this.lastName,
       address: this.address,
     });
   }

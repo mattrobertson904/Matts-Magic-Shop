@@ -23,35 +23,36 @@
         <input type="email" id="confirm-email" name="confirm-email" value="<%= inputData.confirmEmail %>" required>
       </p>
       <p>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" minlength="6" value="<%= inputData.password %>" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="6" value="<%= inputData.password %>" required>
+      </p>
+      <hr>
+      <p>
+        <label for="fullname">First Name</label>
+        <input type="text" id="firstName" name="firstName" value="<%= inputData.firstName %>" required>
+      </p>
+      <p>
+        <label for="fullname">Last Name</label>
+        <input type="text" id="lastName" name="lastName" value="<%= inputData.lastName %>" required>
+      </p>
+      <p>
+         <label for="street">Street</label>
+         <input type="text" id="street" name="street" value="<%= inputData.street %>" required>
+       </p>
+      <p>
+         <label for="city">City</label>
+         <input type="text" id="city" name="city" value="<%= inputData.city %>" required>
+      </p>
+      <p>
+         <label for="fullname">State</label>
+         <input type="text" id="state" name="state" value="<%= inputData.state %>" required>
+      </p>
+      <p>
+         <label for="postal">Postal Code</label>
+         <input type="text" id="postal" name="postal" minlength="5" maxlength="5" value="<%= inputData.postal %>" required>
         </p>
-        <hr>
-        <p>
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" value="<%= inputData.fullname %>" required>
-        </p>
-        <p>
-          <label for="street">Street</label>
-          <input type="text" id="street" name="street" value="<%= inputData.street %>" required>
-        </p>
-        <p>
-          <label for="postal">Postal Code</label>
-          <input 
-          type="text" 
-          id="postal" 
-          name="postal" 
-          minlength="5" 
-          maxlength="5" 
-          value="<%= inputData.postal %>"
-            required>
-        </p>
-        <p>
-          <label for="city">City</label>
-          <input type="text" id="city" name="city" value="<%= inputData.city %>" required>
-        </p>
-        <button class="btn">Create Account</button>
-        <p id="switch-form"><a href="/login">Login instead</a></p>
+      <button class="btn">Create Account</button>
+      <p id="switch-form"><a href="/login">Login instead</a></p>
     </form>
   </main>
   <%- include('../../shared/includes/footer') %>
